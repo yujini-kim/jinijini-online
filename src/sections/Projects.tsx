@@ -15,7 +15,7 @@ const portfolioProjects = [
       { title: "React Query를 사용하여 데이터 페칭 및 상태 관리 최적화" },
       { title: "로딩 시 Skeleton 컴포넌트를 사용하여 사용자 경험 향상" },
     ],
-    link: "https://youtu.be/4k7IdSLxh6w",
+    link: "https://www.jinijini.online/",
     image: pokePage,
   },
   {
@@ -26,7 +26,7 @@ const portfolioProjects = [
       { title: "설명2" },
       { title: "설명3" },
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
+    link: "",
     image: pokePage,
   },
 ];
