@@ -10,7 +10,7 @@ export default function Chatbot() {
 
   // 비밀번호 확인 함수
   const checkPassword = () => {
-    if (password === "1997") {
+    if (password === process.env.NEXT_PUBLIC_MY_CHATBOT_PASSWORD) {
       setIsAuth(true);
     } else {
       alert("비밀번호가 틀렸습니다.");
@@ -18,7 +18,7 @@ export default function Chatbot() {
   };
 
   return (
-    <div className="fixed top-3 right-3 w-80 py-6 px-4 bg-white border rounded shadow">
+    <div className="fixed bottom-2 right-3 w-80 py-6 px-4 bg-white border rounded shadow">
       {!isAuth ? (
         <div className="flex flex-col">
           <h2 className="text-lg font-bold mb-2 text-black">
