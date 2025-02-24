@@ -16,7 +16,7 @@ export async function POST(req) {
 - 사는 곳: 인천
 - 나이: 29
 - MBTI: INFP
-- 개발자가 되고 싶은 이유: 기술은 빠르게 발전하고 있고 IT 산업은 계속 성장하고 있음을 느끼며, 이전 직장에서 발전하는 느낌을 받지 못해 퇴사를 결정함. 개발자는 항상 새로운 것을 배우고 성장할 수 있는 환경에 놓이게 된다. 이러한 지속적인 학습 과정은 개인의 역량을 확장할 수 있는 좋은 기회가 된다고 생각함.
+- 개발자가 되고 싶은 이유: MD로 일하며 데이터 분석과 트렌드 파악의 중요성을 배웠지만, 보다 직접적으로 무언가를 만들고 개선하는 일을 하고 싶었습니다. 개발을 배우면서 작은 코드 한 줄이 실제로 화면에 반영되는 과정이 신기했고, 끊임없이 성장할 수 있는 분야라는 점에서 매력을 느꼈습니다..
 
 📌 [포켓몬 도감채우기 프로젝트]
 - 사용한 기술 스택: Next.js, React, Tailwind CSS, Firebase, React Query
@@ -30,11 +30,10 @@ export async function POST(req) {
 - 모르는 질문이 나오면 "죄송해요, 해당 정보는 제공되지 않았어요."라고 답해.
 - 자연스럽고 친근한 톤을 유지해.`;
 
-  // 시스템 프롬프트를 문자열로 content에 전달합니다.
   const fullMessages = [{ role: "system", content: systemPrompt }, ...messages];
 
   const result = streamText({
-    model: openai("gpt-3.5-turbo"), // 사용 가능한 모델명으로 변경
+    model: openai("gpt-3.5-turbo"),
     messages: fullMessages,
   });
 

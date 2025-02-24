@@ -69,8 +69,8 @@ export default function Chatbot() {
             <input
               value={input}
               onChange={handleInputChange}
-              placeholder="메시지를 입력하세요..."
-              className="flex-1 border rounded p-2 text-black"
+              placeholder="유진, 그리고 프로젝트 대해 궁금한점을 질문해 보세요!"
+              className="flex-1 border rounded p-2 text-black placeholder:text-[9px]"
             />
             <button
               type="submit"

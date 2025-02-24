@@ -24,8 +24,10 @@
     "react": "^18",
     "react-dom": "^18",
     "resend": "^4.0.1",
+    "scroll-out": "^2.2.12",
     "string-similarity": "^4.0.4",
     "tailwind-merge": "^2.4.0",
+    "typeit-react": "^2.7.8",
     "zod": "^3.24.1"
   },
   "devDependencies": {

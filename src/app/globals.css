@@ -3,30 +3,44 @@
 @tailwind utilities;
 
 :root {
-    --font-sans: 'Inter', system-ui, sans-serif;
-    --font-serif: 'Calistoga', Georgia, serif;
-  }
-
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: "Calistoga", Georgia, serif;
+}
 
 @layer base {
-    .nav-item {
-        @apply px-4 py-1.5 rounded-full text-white/70 text-sm font-semibold
-         hover:bg-white/10 hover:text-white transition duration-300 
-    }
-    .hero-ring{
-        @apply absolute inset-0 border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-emerald-300/5 shadow-[0_0_80px_inset] shadow-emerald-300/5
-    }
+  .nav-item {
+    @apply px-4 py-1.5 rounded-full text-white/70 text-sm font-semibold
+         hover:bg-white/10 hover:text-white transition duration-300;
+  }
+  .hero-ring {
+    @apply absolute inset-0 border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-emerald-300/5 shadow-[0_0_80px_inset] shadow-emerald-300/5;
+  }
 }
 
 @layer utilities {
-    .container {
-        @apply lg:max-w-5xl
-    }
+  .container {
+    @apply lg:max-w-5xl;
+  }
 }
 
 .animationScroll {
-    @apply animate-appear;
-    animation-timeline: view();
-    animation-range: entry 0
+  @apply animate-appear;
+  animation-timeline: view();
+  animation-range: entry 0;
+}
 
+[data-scroll] {
+  opacity: 0;
+  will-change: transform, scale, opacity;
+  transform: translateY(6rem) scale(0.93);
+  transition: all 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+[data-scroll="in"] {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+[data-scroll="out"] {
+  opacity: 0;
 }
