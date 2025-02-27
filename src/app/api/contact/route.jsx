@@ -1,22 +1,23 @@
-import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 const CONTACT_MESSAGE_FIELDS = {
   name: "Name",
   email: "Email",
   subject: "Subject",
-  message: "Message"
+  message: "Message",
 };
 
 const EmailContent = (data) => {
   const stringData = Object.entries(data).reduce(
     (str, [key, val]) => str + `${CONTACT_MESSAGE_FIELDS[key]}: \n${val}\n\n`,
-    ""
+    "",
   );
 
   const htmlData = Object.entries(data).reduce(
-    (str, [key, val]) => str + `<h1>${CONTACT_MESSAGE_FIELDS[key]}</h1><p>${val}</p>`,
-    ""
+    (str, [key, val]) =>
+      str + `<h1>${CONTACT_MESSAGE_FIELDS[key]}</h1><p>${val}</p>`,
+    "",
   );
 
   return {
@@ -25,18 +26,17 @@ const EmailContent = (data) => {
   };
 };
 
-
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: "gmail",
   auth: {
-    user: process.env.EMAIL_USER, 
-    pass: process.env.EMAIL_PASS, 
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
 });
 
 const mailOptions = {
   from: process.env.EMAIL_USER,
-  to: process.env.EMAIL_TO, 
+  to: process.env.EMAIL_TO,
 };
 
 export async function POST(request) {
@@ -53,7 +53,7 @@ export async function POST(request) {
       html,
     });
 
-    return NextResponse.json({ message: 'Form submitted successfully' });
+    return NextResponse.json({ message: "Form submitted successfully" });
   } catch (error) {
     console.error(error);
     return NextResponse.json({ message: error.message }, { status: 400 });
