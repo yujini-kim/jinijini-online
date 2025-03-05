@@ -1,21 +1,33 @@
 "use client";
 
-import React, { useState, FormEvent } from "react";
+import React, { useState, FormEvent, useEffect } from "react";
 import { useChat } from "ai/react";
 
 export default function Chatbot() {
   const [password, setPassword] = useState<string>("");
   const [isAuth, setIsAuth] = useState<boolean>(false);
   const { messages, input, handleInputChange, handleSubmit } = useChat();
+  const [chatHistory, setChatHistory] = useState(messages);
 
   // 비밀번호 확인 함수
   const checkPassword = () => {
-    if (password === process.env.NEXT_PUBLIC_MY_CHATBOT_PASSWORD) {
+    if (password.trim() === process.env.NEXT_PUBLIC_MY_CHATBOT_PASSWORD) {
       setIsAuth(true);
     } else {
       alert("비밀번호가 틀렸습니다.");
+      setPassword(""); // 틀렸을 때 입력값 초기화
     }
   };
+  useEffect(() => {
+    const savedChat = sessionStorage.getItem("chatHistory");
+    if (savedChat) {
+      setChatHistory(JSON.parse(savedChat));
+    }
+  }, []);
+
+  useEffect(() => {
+    sessionStorage.setItem("chatHistory", JSON.stringify(messages));
+  }, [messages]);
 
   return (
     <div className="fixed bottom-2 right-3 w-80 py-6 px-4 bg-white border rounded shadow">
@@ -47,9 +59,7 @@ export default function Chatbot() {
               return (
                 <div
                   key={m.id}
-                  className={`my-2 flex ${
-                    isUser ? "justify-end" : "justify-start"
-                  }`}
+                  className={`my-2 flex ${isUser ? "justify-end" : "justify-start"}`}
                 >
                   <div
                     className={`px-3 py-2 rounded-lg max-w-[70%] whitespace-pre-wrap ${
@@ -65,11 +75,17 @@ export default function Chatbot() {
             })}
           </div>
           {/* 입력 폼 */}
-          <form onSubmit={handleSubmit} className="flex">
+          <form
+            onSubmit={(e: FormEvent<HTMLFormElement>) => {
+              e.preventDefault();
+              handleSubmit(e);
+            }}
+            className="flex"
+          >
             <input
               value={input}
               onChange={handleInputChange}
-              placeholder="유진, 그리고 프로젝트 대해 궁금한점을 질문해 보세요!"
+              placeholder="유진, 그리고 프로젝트에 대해 궁금한 점을 질문해 보세요!"
               className="flex-1 border rounded p-2 text-black placeholder:text-[9px]"
             />
             <button

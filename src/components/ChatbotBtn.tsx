@@ -1,9 +1,8 @@
 "use client";
 
 import ChatbotIcon from "@assets/icons/chatbot.svg";
-import Chatbot from "../sections/Chatbot";
 import { useState } from "react";
-
+import Chatbot from "../sections/Chatbot";
 export default function ChatbotBtn() {
   const [isOpen, setIsOpen] = useState(false);
 
