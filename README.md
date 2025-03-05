@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AI Chatbot
 
-## Getting Started
+이 프로젝트는 Next.js App Router와 TypeScript를 활용하여 구축된 챗봇 시스템입니다.  
+챗봇은 `public/markdown` 폴더 내의 Markdown 파일들을 지식 기반으로 활용하여, 사용자 질문에 대해 적절한 답변을 제공합니다.  
+또한, 챗봇 UI는 비밀번호 인증을 통해 접근이 제한되며, 대화 내역을 브라우저의 로컬 스토리지에 저장하여 세션 내에서 연속적인 대화가 가능하도록 설계되었습니다.
 
-First, run the development server:
+## 주요 기능
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **챗봇 UI 및 비밀번호 인증**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  - 챗봇 버튼 클릭 시 비밀번호 입력창이 표시됩니다.
+  - 올바른 비밀번호 입력 시 챗봇 인터페이스가 열리고, 대화가 시작됩니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Markdown 기반 지식 확장**
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+  - `public/markdown` 폴더 내의 Markdown 파일들을 자동으로 읽어, 시스템 프롬프트에 포함시킵니다.
+  - 챗봇 UI 내에서 Markdown 파일 목록을 표시하며, 각 파일을 클릭하여 별도 창에서 열람할 수 있습니다.
 
-## Learn More
+- **API 엔드포인트**
 
-To learn more about Next.js, take a look at the following resources:
+  - `/api/files`: `public/markdown` 폴더 내의 파일 목록을 반환합니다.
+  - `/api/chatbot`: OpenAI의 GPT-3.5-turbo 모델을 사용하여 사용자의 질문에 대해 스트리밍 방식으로 응답합니다.  
+    시스템 프롬프트에는 Markdown 파일의 내용과 챗봇 응답 규칙이 포함되어 있습니다.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **세션 내 대화 내역 유지**
+  - 사용자가 페이지를 새로고침하기 전까지 대화 내역이 로컬 스토리지에 저장되어, 이전 대화 내용을 기억합니다.

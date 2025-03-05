@@ -1,4 +1,5 @@
 import pokePage from "@/assets/images/poke-page.png";
+import chatbotPage from "@/assets/images/chatbot-page.png";
 import Image from "next/image";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
@@ -22,11 +23,27 @@ const portfolioProjects = [
     image: pokePage,
   },
   {
-    year: "날짜짜",
-    title: "프로젝트명",
-    results: [{ title: "설명1" }, { title: "설명2" }, { title: "설명3" }],
-    link: "",
-    image: pokePage,
+    year: "2024 03~",
+    title: "AI 챗봇",
+    results: [
+      {
+        title: "Next.js App Router와 TypeScript를 활용하여 구축된 챗봇 시스템",
+      },
+      {
+        title:
+          "사용자가 페이지를 새로고침하기 전까지 대화 내역이 로컬 스토리지에 저장되어, 이전 대화 내용을 기억합니다.",
+      },
+      {
+        title:
+          "public/markdown` 폴더 내의 Markdown 파일들을 자동으로 읽어, 시스템 프롬프트에 포함시킵니다.",
+      },
+      {
+        title:
+          "챗봇 UI 내에서 Markdown 파일 목록을 표시하며, 각 파일을 클릭하여 별도 창에서 열람할 수 있습니다.",
+      },
+    ],
+    link: "www.jinijini.online",
+    image: chatbotPage,
   },
 ];
 
