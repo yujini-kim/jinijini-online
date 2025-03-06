@@ -12,6 +12,9 @@ const calistoga = Calistoga({
 
 export const metadata: Metadata = {
   title: "김유진 포트폴리오",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -25,7 +28,7 @@ export default function RootLayout({
         className={twMerge(
           inter.className,
           calistoga.className,
-          "bg-gray-900 text-white antialiased font-sans",
+          "bg-gray-900 text-white antialiased font-sans"
         )}
       >
         {children}
