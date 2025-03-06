@@ -31,3 +31,33 @@ export async function POST(req) {
 
   return result.toDataStreamResponse();
 }
+
+//비밀번호 확인
+export async function GET(req) {
+  try {
+    const { searchParams } = new URL(req.url);
+    const password = searchParams.get("password");
+
+    if (!password) {
+      return Response.json(
+        { success: false, message: "비밀번호가 제공되지 않았습니다." },
+        { status: 400 }
+      );
+    }
+
+    if (password === process.env.MY_CHATBOT_PASSWORD) {
+      return Response.json({ success: true });
+    } else {
+      return Response.json(
+        { success: false, message: "비밀번호가 틀렸습니다." },
+        { status: 401 }
+      );
+    }
+  } catch (error) {
+    console.error("Error in GET /api/chat:", error);
+    return Response.json(
+      { success: false, message: "서버 오류 발생" },
+      { status: 500 }
+    );
+  }
+}

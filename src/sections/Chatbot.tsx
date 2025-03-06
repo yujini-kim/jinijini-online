@@ -13,11 +13,14 @@ export default function Chatbot() {
       .then((data) => setFiles(data));
   }, []);
 
-  const checkPassword = () => {
-    if (password === process.env.NEXT_PUBLIC_MY_CHATBOT_PASSWORD) {
+  const checkPassword = async () => {
+    const res = await fetch(`/api/chat?password=${password}`);
+
+    const data = await res.json();
+    if (data.success) {
       setIsAuth(true);
     } else {
-      alert("비밀번호가 틀렸습니다.");
+      alert(data.message || "비밀번호가 틀렸습니다.");
     }
   };
 
