@@ -41,7 +41,7 @@ export async function GET(req) {
     if (!password) {
       return Response.json(
         { success: false, message: "비밀번호가 제공되지 않았습니다." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -50,14 +50,14 @@ export async function GET(req) {
     } else {
       return Response.json(
         { success: false, message: "비밀번호가 틀렸습니다." },
-        { status: 401 }
+        { status: 401 },
       );
     }
   } catch (error) {
     console.error("Error in GET /api/chat:", error);
     return Response.json(
       { success: false, message: "서버 오류 발생" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
