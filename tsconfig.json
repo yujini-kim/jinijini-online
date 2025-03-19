@@ -29,7 +29,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/sections/Email.jsx",
-    "src/app/api/chat/route.js"
+    "src/app/api/chat/route.js",
+    "src/**/*"
   ],
   "exclude": ["node_modules"]
 }

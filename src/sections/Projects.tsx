@@ -27,7 +27,7 @@ const portfolioProjects = [
           "이 프로젝트는 Next.js App Router와 TypeScript를 활용하여 구축된 챗봇 시스템입니다. 챗봇은 public/markdown 폴더 내의 Markdown 파일들을 지식 기반으로 활용하여, 사용자 질문에 대해 적절한 답변을 제공합니다. 또한, 챗봇 UI는 비밀번호 인증을 통해 접근이 제한되며, 대화 내역을 브라우저의 로컬 스토리지에 저장하여 세션 내에서 연속적인 대화가 가능하도록 설계되었습니다",
       },
     ],
-    link: "www.jinijini.online",
+    link: "https://www.jinijini.online/",
     image: chatbotPage,
   },
 ];
