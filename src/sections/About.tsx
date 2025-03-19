@@ -8,14 +8,10 @@ import Image from "next/image";
 import Html5Icon from "@assets/icons/html5.svg";
 import JsIcon from "@assets/icons/js.svg";
 import TsIcon from "@assets/icons/typescript.svg";
-import GraphQLIcon from "@assets/icons/graphql.svg";
+import CSS from "@assets/icons/css.svg";
 import NextjsIcon from "@assets/icons/nextjs.svg";
-import PythonIcon from "@assets/icons/python.svg";
 import ReactIcon from "@assets/icons/react.svg";
-import RemixIcon from "@assets/icons/remix.svg";
-import SqlIcon from "@assets/icons/sql.svg";
 import StorybookIcon from "@assets/icons/storybook.svg";
-import SvelteIcon from "@assets/icons/svelte.svg";
 import TailwindIcon from "@assets/icons/tailwind.svg";
 import mapImage from "@assets/images/map.png";
 import mapMemoji from "@assets/images/memoji-map.webp";
@@ -23,19 +19,17 @@ import { Toolboxitems } from "@/components/Toolboxitems";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import ScrollOut from "scroll-out";
+
 const toolboxItems = [
   { title: "HTML5", iconType: Html5Icon },
+  { title: "CSS", iconType: CSS },
   { title: "Javascript", iconType: JsIcon },
   { title: "Typescript", iconType: TsIcon },
   { title: "Next.js", iconType: NextjsIcon },
-  { title: "Python", iconType: PythonIcon },
   { title: "React", iconType: ReactIcon },
-  { title: "Remix.js", iconType: RemixIcon },
-  { title: "Svelte.js", iconType: SvelteIcon },
+
   { title: "Tailwind CSS", iconType: TailwindIcon },
   { title: "StoryBook", iconType: StorybookIcon },
-  { title: "SQL", iconType: SqlIcon },
-  { title: "GraphQL", iconType: GraphQLIcon },
 ];
 
 const hobbies = [
@@ -92,10 +86,7 @@ export const AboutSection = () => {
         <div className="mt-20 flex flex-col gap-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
             <Card data-scroll className="h-[320px] md:col-span-2 lg:col-span-1">
-              <CardHearder
-                title={"My profile"}
-                description={"My name is yujin Kim."}
-              />
+              <CardHearder title={"My profile"} description={""} />
               <div className="w-40 mx-auto">
                 <Image src={MyImage} alt="My Image" />
               </div>

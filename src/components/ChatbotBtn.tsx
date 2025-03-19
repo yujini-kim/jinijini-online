@@ -12,7 +12,7 @@ export default function ChatbotBtn() {
   return (
     <>
       <div
-        className="size-14 fixed bottom-2 right-4 cursor-pointer z-40"
+        className="size-14 fixed bottom-2 right-4 cursor-pointer z-40 animate-bounce"
         onClick={() => setIsOpen(!isOpen)}
       >
         <ChatbotIcon className="w-full h-full text-white fill-current" />

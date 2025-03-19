@@ -1,45 +1,30 @@
 import pokePage from "@/assets/images/poke-page.png";
 import chatbotPage from "@/assets/images/chatbot-page.png";
 import Image from "next/image";
-import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import { Card } from "@/components/Card";
 
 const portfolioProjects = [
   {
-    year: "2024 03~",
+    number: "project 1",
     title: "포켓몬 도감채우기 게임",
     results: [
-      { title: "next.js와 React를 활용하여 개발한 웹 게임" },
       {
         title:
-          "별도의 백엔드 서버 없이 React의 Context API를 사용하여 전역 상태 관리",
+          "이 웹 애플리케이션은 사용자가 간단한 게임을 통해 코인을 획득하고, 모은 코인으로 다양한 등급의 포켓몬 카드를 뽑아 수집할 수 있는 포켓몬 게임입니다. Tailwind CSS를 사용해 빠른 스타일링과 반응형 디자인을 구현하였고, React Query를 통해 API로부터 데이터를 효율적으로 페칭 및 캐싱하여 로딩과 에러 상태를 간결하게 관리하였습니다. 또한, Firebase Authentication과 Firestore를 활용해 별도의 백엔드 서버 없이도 사용자 인증과 데이터 관리를 안정적으로 수행하며, Vercel과의 연동으로 손쉬운 배포 및 환경 변수 관리를 구현했습니다.",
       },
-      { title: "React Query를 사용하여 데이터 페칭 및 상태 관리 최적화" },
-      { title: "로딩 시 Skeleton 컴포넌트를 사용하여 사용자 경험 향상" },
     ],
     link: "https://jinijini-online.vercel.app/",
     image: pokePage,
   },
   {
-    year: "2024 03~",
+    number: "project 2",
     title: "AI 챗봇",
     results: [
       {
-        title: "Next.js App Router와 TypeScript를 활용하여 구축된 챗봇 시스템",
-      },
-      {
         title:
-          "사용자가 페이지를 새로고침하기 전까지 대화 내역이 로컬 스토리지에 저장되어, 이전 대화 내용을 기억합니다.",
-      },
-      {
-        title:
-          "public/markdown` 폴더 내의 Markdown 파일들을 자동으로 읽어, 시스템 프롬프트에 포함시킵니다.",
-      },
-      {
-        title:
-          "챗봇 UI 내에서 Markdown 파일 목록을 표시하며, 각 파일을 클릭하여 별도 창에서 열람할 수 있습니다.",
+          "이 프로젝트는 Next.js App Router와 TypeScript를 활용하여 구축된 챗봇 시스템입니다. 챗봇은 public/markdown 폴더 내의 Markdown 파일들을 지식 기반으로 활용하여, 사용자 질문에 대해 적절한 답변을 제공합니다. 또한, 챗봇 UI는 비밀번호 인증을 통해 접근이 제한되며, 대화 내역을 브라우저의 로컬 스토리지에 저장하여 세션 내에서 연속적인 대화가 가능하도록 설계되었습니다",
       },
     ],
     link: "www.jinijini.online",
@@ -88,7 +73,7 @@ export const ProjectsSection = () => {
               inline-flex gap-2 font-bold uppercase tracking-widest text-sm
               text-transparent bg-clip-text"
                   >
-                    <span>{project.year}</span>
+                    <span>{project.number}</span>
                   </div>
 
                   <h3
@@ -104,7 +89,6 @@ export const ProjectsSection = () => {
                         key={result.title}
                         className="flex gap-2 text-sm md:text-base text-white/50"
                       >
-                        <CheckCircleIcon className="w-5 h-5 md:w-5 md:h-5 shrink-0" />
                         {result.title}
                       </li>
                     ))}
