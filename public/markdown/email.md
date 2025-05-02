@@ -1,4 +1,4 @@
-# **Email 보내기 기능 프로젝트**
+[Email 보내기 기능 프로젝트]
 
 이 프로젝트는 Next.js 및 Nodemailer를 사용하여 이메일을 보내는 연락처 양식(Contact Form)을 구현한 것입니다.
 

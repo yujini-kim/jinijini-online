@@ -1,5 +1,6 @@
 import pokePage from "@/assets/images/poke-page.png";
 import chatbotPage from "@/assets/images/chatbot-page.png";
+import weddingPage from "@/assets/images/weddingPage.png";
 import Image from "next/image";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
@@ -24,11 +25,23 @@ const portfolioProjects = [
     results: [
       {
         title:
-          "이 프로젝트는 Next.js App Router와 TypeScript를 활용하여 구축된 챗봇 시스템입니다. 챗봇은 public/markdown 폴더 내의 Markdown 파일들을 지식 기반으로 활용하여, 사용자 질문에 대해 적절한 답변을 제공합니다. 또한, 챗봇 UI는 비밀번호 인증을 통해 접근이 제한되며, 대화 내역을 브라우저의 로컬 스토리지에 저장하여 세션 내에서 연속적인 대화가 가능하도록 설계되었습니다",
+          "이 프로젝트는 open AI API를 활용하여 구축된 챗봇 시스템입니다. 챗봇은 public/markdown 폴더 내의 Markdown 파일들을 지식 기반으로 활용하여, 사용자 질문에 대해 적절한 답변을 제공합니다. 또한, 챗봇 UI는 비밀번호 인증을 통해 접근이 제한되며, 대화 내역을 브라우저의 로컬 스토리지에 저장하여 세션 내에서 연속적인 대화가 가능하도록 설계되었습니다",
       },
     ],
-    link: "https://www.jinijini.online/",
+    link: "",
     image: chatbotPage,
+  },
+  {
+    number: "project 3",
+    title: "축의금 분석하기(진행중)",
+    results: [
+      {
+        title: `이 프로젝트는 사용자와 상대방의 카카오톡 대화 내용을 분석하여, AI가 친밀도를 점수화하고 그에 따라 적절한 축의금 금액을 추천해주는 애플리케이션입니다.
+Next.js와 Spring Boot를 기반으로 프론트엔드와 백엔드를 분리하여 개발 중입니다.`,
+      },
+    ],
+    link: "",
+    image: weddingPage,
   },
 ];
 

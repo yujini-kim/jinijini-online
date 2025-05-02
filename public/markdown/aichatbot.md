@@ -1,4 +1,4 @@
-# **AI Chatbot 프로젝트**
+[AI Chatbot 프로젝트]
 
 챗봇은 `public/markdown` 폴더 내의 Markdown 파일들을 지식 기반으로 활용하여, 사용자 질문에 대해 적절한 답변을 제공합니다.
 
