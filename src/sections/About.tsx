@@ -78,11 +78,7 @@ export const AboutSection = () => {
   return (
     <div className="py-20 lg-py-28">
       <div id="About" className="container">
-        <SectionHeader
-          eyebrow="About Me"
-          title="A Glimpse Into My World"
-          description="Learn more about who I am, what I do, and what "
-        />
+        <SectionHeader title="About Me" />
         <div className="mt-20 flex flex-col gap-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
             <Card data-scroll className="h-[320px] md:col-span-2 lg:col-span-1">

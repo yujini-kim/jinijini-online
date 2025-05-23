@@ -7,7 +7,7 @@ export const Footer = () => {
         <div className="border-t border-white/15 py-6 text-sm flex flex-col md:flex-row md:justify-between items-center gap-8">
           <div className="text-white/40">
             {" "}
-            &copy; 2024. All rights reserved.
+            &copy; 2025. All rights reserved.
           </div>
           <nav className="flex flex-col items-center gap-8 md:flex-row">
             <a

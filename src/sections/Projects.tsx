@@ -3,8 +3,10 @@ import chatbotPage from "@/assets/images/chatbot-page.png";
 import weddingPage from "@/assets/images/weddingPage.png";
 import Image from "next/image";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
+import GitIcon from "@/assets/icons/github.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import { Card } from "@/components/Card";
+import { SectionHeader } from "@/components/SectionHeader";
 
 const portfolioProjects = [
   {
@@ -18,6 +20,7 @@ const portfolioProjects = [
     ],
     link: "https://jinijini-online.vercel.app/",
     image: pokePage,
+    git: "https://github.com/yujini-kim/pokemon-game.git",
   },
   {
     number: "project 2",
@@ -30,6 +33,7 @@ const portfolioProjects = [
     ],
     link: "",
     image: chatbotPage,
+    git: "https://github.com/yujini-kim/jinijini-online.git",
   },
   {
     number: "project 3",
@@ -42,27 +46,15 @@ Next.js와 Spring Boot를 기반으로 프론트엔드와 백엔드를 분리하
     ],
     link: "https://www.weddinggiftai.online/",
     image: weddingPage,
+    git: "https://github.com/tonghwi/yujindong.git",
   },
 ];
 
 export const ProjectsSection = () => {
   return (
-    <section id="project" className="pb-16 lg:py-24">
+    <section id="project" className="mt-20 pb-16 lg:py-24">
       <div className="container">
-        <div className="flex justify-center">
-          <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 text-transparent bg-clip-text text-center">
-            Real-world Results
-          </p>
-        </div>
-        <h2 className="font-serif text-3xl md:text-5xl text-center mt-6 tracking-widest">
-          Project
-        </h2>
-        <p
-          className="text-center md:text-lg lg:text-xl text-white/60 mt-4 max-w-md
-        mx-auto"
-        >
-          see how I transfromed concepts into engaging digital experiences
-        </p>
+        <SectionHeader title="Project" />
         <div className="md:mt-20 flex flex-col mt-10 gap-20">
           {portfolioProjects.map((project, index) => (
             <Card
@@ -106,16 +98,28 @@ export const ProjectsSection = () => {
                       </li>
                     ))}
                   </ul>
-                  <a href={project.link}>
-                    <button
-                      className="bg-white text-gray-950 h-12 w-full 
+                  <div className="flex gap-4 mt-6">
+                    <a href={project.link}>
+                      <button
+                        className="bg-white text-gray-950 
               rounded-xl font-semibold inline-flex items-center
-              justify-center gap-2 mt-8 md:w-auto px-6"
-                    >
-                      <span>Visit Live Site</span>
-                      <ArrowUpRightIcon className="size-4" />
-                    </button>
-                  </a>
+              justify-center gap-2 p-2 md:w-auto"
+                      >
+                        <span className="text-xs">Visit Site</span>
+                        <ArrowUpRightIcon className="size-4" />
+                      </button>
+                    </a>
+                    <a href={project.git}>
+                      <button
+                        className="bg-white text-gray-950
+              rounded-xl font-semibold inline-flex items-center
+              justify-center gap-2 p-2 md:w-auto"
+                      >
+                        <span className="text-xs">Git Hub</span>
+                        <GitIcon className="size-4" />
+                      </button>
+                    </a>
+                  </div>
                 </div>
                 <div className="relative">
                   <Image

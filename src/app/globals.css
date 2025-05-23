@@ -2,9 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "NanumSquareNeo";
+  src: url("/fonts/NanumSquareNeo.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --font-sans: "Inter", system-ui, sans-serif;
   --font-serif: "Calistoga", Georgia, serif;
+  --font-NanumSquareNeo: "NanumSquareNeo-R", sans-serif;
 }
 
 @layer base {
