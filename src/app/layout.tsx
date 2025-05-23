@@ -41,7 +41,7 @@ export default function RootLayout({
           inter.className,
           calistoga.className,
           nanumSquareNeo.className,
-          "bg-gray-900 text-white antialiased"
+          "bg-gray-900 text-white antialiased",
         )}
       >
         {children}

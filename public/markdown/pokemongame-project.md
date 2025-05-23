@@ -63,11 +63,11 @@ PokeAPI는 기본적으로 영어 데이터를 제공하므로, 한국어 데이
 jsx;
 
 const speciesResponse = await fetch(
-  `https://pokeapi.co/api/v2/pokemon-species/${details.id}`
+  `https://pokeapi.co/api/v2/pokemon-species/${details.id}`,
 );
 const speciesData = await speciesResponse.json();
 const koreanNameObj = speciesData.names.find(
-  (name) => name.language.name === "ko"
+  (name) => name.language.name === "ko",
 );
 const koreanName = koreanNameObj ? koreanNameObj.name : pokemon.name;
 ```
@@ -86,10 +86,10 @@ const types = await Promise.all(
     const typeResponse = await fetch(type.type.url);
     const typeData = await typeResponse.json();
     const koreanTypeName = typeData.names.find(
-      (name) => name.language.name === "ko"
+      (name) => name.language.name === "ko",
     )?.name;
     return koreanTypeName || type.type.name;
-  })
+  }),
 );
 ```
 
@@ -172,7 +172,7 @@ const signUpSubmit = async (e) => {
     const credentials = await createUserWithEmailAndPassword(
       auth,
       email,
-      password
+      password,
     );
     await updateProfile(credentials.user, { displayName: name });
     router.push("/");
