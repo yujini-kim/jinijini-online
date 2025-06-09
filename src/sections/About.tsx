@@ -11,161 +11,109 @@ import TsIcon from "@assets/icons/typescript.svg";
 import CSS from "@assets/icons/css.svg";
 import NextjsIcon from "@assets/icons/nextjs.svg";
 import ReactIcon from "@assets/icons/react.svg";
-import StorybookIcon from "@assets/icons/storybook.svg";
+import Zustand from "@assets/icons/zustand.svg";
 import TailwindIcon from "@assets/icons/tailwind.svg";
-import mapImage from "@assets/images/map.png";
-import mapMemoji from "@assets/images/memoji-map.webp";
-import { Toolboxitems } from "@/components/Toolboxitems";
-import { motion } from "framer-motion";
+import ReactQueryIcon from "@assets/icons/react-query.svg";
+import StyledComponents from "@assets/icons/styled-components.svg";
+import FramerMotion from "@assets/icons/framer-motion.svg";
+import RecoilIcon from "@assets/icons/recoil.svg";
+import GitIcon from "@assets/icons/github.svg";
+import CakeIcon from "@assets/icons/cake.svg";
+import EmailIcon from "@assets/icons/email.svg";
+import GithubIcon from "@assets/icons/github.svg";
 import { useEffect, useRef } from "react";
 import ScrollOut from "scroll-out";
+import { Toolboxitems } from "@/components/Toolboxitems";
 
-const toolboxItems = [
+const frontboxItems = [
   { title: "HTML5", iconType: Html5Icon },
   { title: "CSS", iconType: CSS },
   { title: "Javascript", iconType: JsIcon },
   { title: "Typescript", iconType: TsIcon },
   { title: "Next.js", iconType: NextjsIcon },
   { title: "React", iconType: ReactIcon },
-
   { title: "Tailwind CSS", iconType: TailwindIcon },
-  { title: "StoryBook", iconType: StorybookIcon },
 ];
 
-const hobbies = [
-  {
-    title: "Cooking",
-    emoji: "🍔",
-    left: "5%",
-    top: "5%",
-  },
-  {
-    title: "Music",
-    emoji: "🎶",
-    left: "50%",
-    top: "5%",
-  },
-  {
-    title: "Gaming",
-    emoji: "🎮",
-    left: "8%",
-    top: "35%",
-  },
-  {
-    title: "Running",
-    emoji: "🏃‍➡️",
-    left: "45%",
-    top: "40%",
-  },
-  {
-    title: "Movie",
-    emoji: "🎥",
-    left: "30%",
-    top: "65%",
-  },
+const toolboxItems = [
+  { title: "Zustand", iconType: Zustand },
+  { title: "react-query", iconType: ReactQueryIcon },
+  { title: "styled-components", iconType: StyledComponents },
+  { title: "framer-motion", iconType: FramerMotion },
+  { title: "Recoil", iconType: RecoilIcon },
 ];
-
 export const AboutSection = () => {
-  const constrainRef = useRef(null);
-
-  useEffect(() => {
-    ScrollOut({
-      targets: "[data-scroll]",
-      once: false,
-    });
-  }, []);
-
   return (
     <div className="py-20 lg-py-28">
       <div id="About" className="container">
         <SectionHeader title="About Me" />
         <div className="mt-20 flex flex-col gap-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
-            <Card data-scroll className="h-[320px] md:col-span-2 lg:col-span-1">
+            <Card className="h-[320px] md:col-span-5 lg:col-span-5">
               <CardHearder title={"My profile"} description={""} />
-              <div className="w-40 mx-auto">
-                <Image src={MyImage} alt="My Image" />
+              <div className="flex mx-auto px-10">
+                <Image src={MyImage} alt="My Image" width={160} />
+                <div className="flex flex-col mt-4">
+                  <div className="flex flex-col pl-6">
+                    <div className="flex items-center gap-1 leading-none">
+                      <CakeIcon className="size-4" />
+                      <span className="text-xs mt-[6px]">1997.09.12</span>
+                    </div>
+                    <div className="flex items-center gap-1 leading-none">
+                      <EmailIcon className="size-4" />
+                      <span className="text-xs mt-[6px]">
+                        kingyujin56@gmail.com
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1 leading-none">
+                      <GithubIcon className="size-4" />
+                      <span className="text-xs mt-[6px]">
+                        github.com/yujini-kim
+                      </span>
+                    </div>
+                  </div>
+                  <span className="pl-6  mt-4">
+                    작은 물방울이 모여 콩나물이 자라듯, 작은 노력들이 모여
+                    성장을 만든다고 믿습니다. 완벽한 환경이 아니어도 배우고
+                    도전하는 것을 멈추지 않으며, 매일 조금씩 나아가는 개발자가
+                    되고자 합니다.
+                  </span>
+                </div>
               </div>
-            </Card>
-            <Card data-scroll className="h-[320px] md:col-span-3 lg:col-span-2">
-              <CardHearder
-                title={"My Toolbox"}
-                description={"Explore the technologies and tools"}
-                className=""
-              />
-              <Toolboxitems
-                items={toolboxItems}
-                className=""
-                itemsWrapperClassName="animate-move-left [animation-duration:30s]"
-              />
-              <Toolboxitems
-                items={toolboxItems}
-                className="mt-6"
-                itemsWrapperClassName="-translate-x-1/2 animate-move-right [animation-duration:20s]"
-              />
             </Card>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
-            <Card
-              data-scroll
-              className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2 
-      "
-            >
+            <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1 ">
               <CardHearder
-                title={"Beyond the Code"}
-                description={"Explore my interests and hobbies"}
-                className="px-6 py-6"
+                title={"Frontend Development"}
+                description={
+                  "React.js와 Next.js를 활용한 프론트엔드 개발 경험이 있으며, JavaScript(ES6), TypeScript, Tailwind CSS 사용에 능숙합니다."
+                }
+                className=""
               />
-              <div className="relative flex-1" ref={constrainRef}>
-                {hobbies.map((hobby) => (
-                  <motion.div
-                    key={hobby.title}
-                    className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute"
-                    style={{
-                      left: hobby.left,
-                      top: hobby.top,
-                    }}
-                    drag
-                    dragConstraints={constrainRef}
-                  >
-                    <span className="font-medium text-gray-950">
-                      {hobby.title}
-                    </span>
-                    <span>{hobby.emoji}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </Card>
 
-            <Card
-              data-scroll
-              className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1 "
-            >
-              <Image
-                src={mapImage}
-                alt="map"
-                className="h-full w-full object-cover
-        object-left-top"
+              <Toolboxitems
+                items={frontboxItems}
+                className="mt-2"
+                itemsWrapperClassName="animate-move-left [animation-duration:30s]"
               />
-              <div
-                className="absolute top-1/3 left-1/2 
-        -translate-x-full -translate-y-3/4 size-20 rounded-full        
-        after:content-[''] after:absolute after:inset-0 after:outline 
-        after:outline-2 after:-outline-offset-2 after:rounded-full
-        after:outline-gray-950/30"
-              >
-                <div
-                  className="absolute inset-0 rounded-full 
-          bg-gradient-to-r from-emerald-300 to-sky-400 -z-20 animate-ping [animation-duration:2s]"
-                ></div>
-                <div
-                  className="absolute inset-0 rounded-full 
-          bg-gradient-to-r from-emerald-300 to-sky-400 -z-10"
-                ></div>
-                <Image
-                  src={mapMemoji}
-                  alt="smile memoji"
-                  className="size-20 overflow-hidden"
+            </Card>
+            <Card className="h-[320px] p-0 relative md:col-span-3 lg:col-span-1 ">
+              <CardHearder
+                title={"Tools & Libraries"}
+                description={`프로젝트에 따라 Zustand, React Query, Recoil, Styled-components, Framer Motion 등 
+            상태관리, 스타일링 등 각각의 목적에 맞는 다양한 라이브러리를 사용한 경험이 있습니다.
+`}
+                className=""
+              />
+              <div className="flex flex-col gap-3">
+                <Toolboxitems
+                  items={toolboxItems}
+                  itemsWrapperClassName="animate-move-left [animation-duration:30s]"
+                />
+                <Toolboxitems
+                  items={toolboxItems}
+                  itemsWrapperClassName="-translate-x-1/2 animate-move-right [animation-duration:20s]"
                 />
               </div>
             </Card>
