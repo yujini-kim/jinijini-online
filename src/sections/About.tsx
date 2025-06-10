@@ -17,14 +17,12 @@ import ReactQueryIcon from "@assets/icons/react-query.svg";
 import StyledComponents from "@assets/icons/styled-components.svg";
 import FramerMotion from "@assets/icons/framer-motion.svg";
 import RecoilIcon from "@assets/icons/recoil.svg";
-import GitIcon from "@assets/icons/github.svg";
-import CakeIcon from "@assets/icons/cake.svg";
-import EmailIcon from "@assets/icons/email.svg";
-import GithubIcon from "@assets/icons/github.svg";
+
 import { useEffect, useRef } from "react";
 import ScrollOut from "scroll-out";
 import { Toolboxitems } from "@/components/Toolboxitems";
 import Link from "next/link";
+import MyInfo from "@/components/Myinfo";
 
 const frontboxItems = [
   { title: "HTML5", iconType: Html5Icon },
@@ -52,32 +50,16 @@ export const AboutSection = () => {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
             <Card className="h-[320px] md:col-span-5 lg:col-span-5">
               <CardHearder title={"My profile"} description={""} />
-              <div className="flex mx-auto px-10">
-                <Image src={MyImage} alt="My Image" width={160} />
-                <div className="flex flex-col mt-4">
-                  <div className="flex flex-col pl-6">
-                    <div className="flex items-center gap-1 leading-none">
-                      <CakeIcon className="size-4" />
-                      <span className="text-xs mt-[6px]">1997.09.12</span>
-                    </div>
-                    <div className="flex items-center gap-1 leading-none">
-                      <EmailIcon className="size-4" />
-                      <span className="text-xs mt-[6px]">
-                        kingyujin56@gmail.com
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-1 leading-none">
-                      <GithubIcon className="size-4" />
-                      <a
-                        href="https://github.com/yujini-kim"
-                        target="_blank"
-                        className="text-xs mt-[6px]"
-                      >
-                        github.com/yujini-kim
-                      </a>
-                    </div>
-                  </div>
-                  <span className="pl-6  mt-4">
+              <div className="flex mx-auto md:px-10">
+                <Image
+                  src={MyImage}
+                  alt="My Image"
+                  className="hidden md:block md:w-[160px]"
+                />
+
+                <div className="flex flex-col md:mt-4">
+                  <MyInfo />
+                  <span className="px-6 mt-4">
                     작은 물방울이 모여 콩나물이 자라듯, 작은 노력들이 모여
                     성장을 만든다고 믿습니다. 완벽한 환경이 아니어도 배우고
                     도전하는 것을 멈추지 않으며, 매일 조금씩 나아가는 개발자가
@@ -102,11 +84,15 @@ export const AboutSection = () => {
                 className="mt-2"
                 itemsWrapperClassName="animate-move-left [animation-duration:30s]"
               />
+              <Toolboxitems
+                items={frontboxItems}
+                itemsWrapperClassName="-translate-x-1/2 animate-move-right [animation-duration:20s] mt-3 md:hidden"
+              />
             </Card>
             <Card className="h-[320px] p-0 relative md:col-span-3 lg:col-span-1 ">
               <CardHearder
                 title={"Tools & Libraries"}
-                description={`프로젝트에 따라 Zustand, React Query, Recoil, Styled-components, Framer Motion 등 
+                description={`프로젝트에 따라 
             상태관리, 스타일링 등 각각의 목적에 맞는 다양한 라이브러리를 사용한 경험이 있습니다.
 `}
                 className=""

@@ -5,6 +5,7 @@ import Page from "@/assets/images/preparing-page.png";
 import Image from "next/image";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import GitIcon from "@/assets/icons/github.svg";
+import CheckIcon from "@/assets/icons/check-circle.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import { Card } from "@/components/Card";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -127,14 +128,16 @@ export const ProjectsSection = () => {
                       </li>
                     ))}
                   </ul>
-                  <div className="flex gap-4 mt-6">
+                  <div className="flex gap-2 md:gap-4 mt-6">
                     <a href={project.link}>
                       <button
                         className="bg-white text-gray-950 
               rounded-xl font-semibold inline-flex items-center
               justify-center gap-2 p-2 md:w-auto"
                       >
-                        <span className="text-xs">Visit Site</span>
+                        <span className="text-[8px] md:text-xs">
+                          Visit Site
+                        </span>
                         <ArrowUpRightIcon className="size-4" />
                       </button>
                     </a>
@@ -144,7 +147,7 @@ export const ProjectsSection = () => {
               rounded-xl font-semibold inline-flex items-center
               justify-center gap-2 p-2 md:w-auto"
                       >
-                        <span className="text-xs">Git Hub</span>
+                        <span className="text-[8px] md:text-xs">Git Hub</span>
                         <GitIcon className="size-4" />
                       </button>
                     </a>
@@ -154,7 +157,8 @@ export const ProjectsSection = () => {
               rounded-xl font-semibold inline-flex items-center
               justify-center gap-2 p-2 md:w-auto"
                       >
-                        <span className="text-xs">상세내용</span>
+                        <span className="text-[8px] md:text-xs">상세내용</span>
+                        <CheckIcon className="size-4" />
                       </button>
                     </a>
                   </div>
