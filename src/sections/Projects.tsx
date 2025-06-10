@@ -24,7 +24,8 @@ const portfolioProjects = [
     link: "https://jinijini-online.vercel.app/",
     image: pokePage,
     git: "https://github.com/yujini-kim/pokemon-game.git",
-    infolink: "",
+    infolink:
+      "https://www.notion.so/20ed67feba0a80efb0d7c4725bba9ca7?source=copy_link",
   },
   {
     number: "project 2",
@@ -39,7 +40,7 @@ const portfolioProjects = [
     link: "",
     image: chatbotPage,
     git: "https://github.com/yujini-kim/jinijini-online.git",
-    infolink: "",
+    infolink: "https://github.com/yujini-kim/jinijini-online.git",
   },
   {
     number: "project 3",
@@ -70,7 +71,7 @@ const portfolioProjects = [
     ],
     link: "https://www.weddinggiftai.online/",
     image: Page,
-    git: "https://github.com/tonghwi/yujindong.git",
+    git: "https://github.com/yujini-kim/find-toilet-app.git",
     infolink:
       "https://www.notion.so/20bd67feba0a80cbbdf8e0f7fda292f5?source=copy_link",
   },
