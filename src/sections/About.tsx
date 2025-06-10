@@ -24,6 +24,7 @@ import GithubIcon from "@assets/icons/github.svg";
 import { useEffect, useRef } from "react";
 import ScrollOut from "scroll-out";
 import { Toolboxitems } from "@/components/Toolboxitems";
+import Link from "next/link";
 
 const frontboxItems = [
   { title: "HTML5", iconType: Html5Icon },
@@ -67,9 +68,13 @@ export const AboutSection = () => {
                     </div>
                     <div className="flex items-center gap-1 leading-none">
                       <GithubIcon className="size-4" />
-                      <span className="text-xs mt-[6px]">
+                      <a
+                        href="https://github.com/yujini-kim"
+                        target="_blank"
+                        className="text-xs mt-[6px]"
+                      >
                         github.com/yujini-kim
-                      </span>
+                      </a>
                     </div>
                   </div>
                   <span className="pl-6  mt-4">

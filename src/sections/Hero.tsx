@@ -7,7 +7,6 @@ import StarIcon from "@assets/icons/star.svg";
 import SparkIcon from "@assets/icons/sparkle.svg";
 import { HeroOrbit } from "@/components/HeroOrbit";
 import TypeIt from "typeit-react";
-import HeroBtn from "@/components/HeroBtn";
 
 export const HeroSection = () => {
   return (
@@ -129,7 +128,6 @@ export const HeroSection = () => {
             성장하고 있는 프론트엔드 개발자 김유진입니다.
           </p>
         </div>
-        <HeroBtn />
       </div>
     </div>
   );

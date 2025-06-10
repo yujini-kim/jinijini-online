@@ -1,6 +1,7 @@
 import pokePage from "@/assets/images/poke-page.png";
 import chatbotPage from "@/assets/images/chatbot-page.png";
 import weddingPage from "@/assets/images/weddingPage.png";
+import Page from "@/assets/images/preparing-page.png";
 import Image from "next/image";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import GitIcon from "@/assets/icons/github.svg";
@@ -12,41 +13,65 @@ const portfolioProjects = [
   {
     number: "project 1",
     title: "포켓몬 도감채우기 게임",
+    date: "24.11~25.03",
     results: [
       {
         title:
-          "이 웹 애플리케이션은 사용자가 간단한 게임을 통해 코인을 획득하고, 모은 코인으로 다양한 등급의 포켓몬 카드를 뽑아 수집할 수 있는 포켓몬 게임입니다. Tailwind CSS를 사용해 빠른 스타일링과 반응형 디자인을 구현하였고, React Query를 통해 API로부터 데이터를 효율적으로 페칭 및 캐싱하여 로딩과 에러 상태를 간결하게 관리하였습니다. 또한, Firebase Authentication과 Firestore를 활용해 별도의 백엔드 서버 없이도 사용자 인증과 데이터 관리를 안정적으로 수행하며, Vercel과의 연동으로 손쉬운 배포 및 환경 변수 관리를 구현했습니다.",
+          "사용자가 간단한 게임을 통해 코인을 획득하고, 모은 코인으로 다양한 등급의 포켓몬 카드를 뽑아 수집할 수 있는 포켓몬 게임입니다.",
       },
     ],
     link: "https://jinijini-online.vercel.app/",
     image: pokePage,
     git: "https://github.com/yujini-kim/pokemon-game.git",
+    infolink: "",
   },
   {
     number: "project 2",
     title: "AI 챗봇",
+    date: "25.01~25.03",
     results: [
       {
         title:
-          "이 프로젝트는 open AI API를 활용하여 구축된 챗봇 시스템입니다. 챗봇은 public/markdown 폴더 내의 Markdown 파일들을 지식 기반으로 활용하여, 사용자 질문에 대해 적절한 답변을 제공합니다. 또한, 챗봇 UI는 비밀번호 인증을 통해 접근이 제한되며, 대화 내역을 브라우저의 로컬 스토리지에 저장하여 세션 내에서 연속적인 대화가 가능하도록 설계되었습니다",
+          "방문자가 질문하면 미리 제공된 Markdown 파일을 기반으로 답변하는 AI 챗봇 기능을 제공합니다.",
       },
     ],
     link: "",
     image: chatbotPage,
     git: "https://github.com/yujini-kim/jinijini-online.git",
+    infolink: "",
   },
   {
     number: "project 3",
-    title: "축의금 분석하기(진행중)",
+    title: "축의금 분석하기",
+    date: "25.04~25.05",
     results: [
       {
         title: `이 프로젝트는 사용자와 상대방의 카카오톡 대화 내용을 분석하여, AI가 친밀도를 점수화하고 그에 따라 적절한 축의금 금액을 추천해주는 애플리케이션입니다.
-Next.js와 Spring Boot를 기반으로 프론트엔드와 백엔드를 분리하여 개발 중입니다.`,
+`,
       },
     ],
     link: "https://www.weddinggiftai.online/",
     image: weddingPage,
     git: "https://github.com/tonghwi/yujindong.git",
+    infolink:
+      "https://www.notion.so/1d5d67feba0a80cf9985f8b34e2b7189?source=copy_link",
+  },
+  {
+    number: "project 4",
+    title: "공중화장실 위치찾기",
+    date: "25.06~",
+    results: [
+      {
+        title: `이사용자의 현재 위치를 기반으로 주변 공공화장실을 지도 위에 표시하고,
+
+위치 정보, 운영 시간, 남녀 구분, 장애인 화장실 여부 등 다양한 정보를 함께 제공합니다.`,
+      },
+    ],
+    link: "https://www.weddinggiftai.online/",
+    image: Page,
+    git: "https://github.com/tonghwi/yujindong.git",
+    infolink:
+      "https://www.notion.so/20bd67feba0a80cbbdf8e0f7fda292f5?source=copy_link",
   },
 ];
 
@@ -87,6 +112,10 @@ export const ProjectsSection = () => {
                   >
                     {project.title}
                   </h3>
+                  <span className="text-[10px] text-white/70">
+                    {project.date}
+                  </span>
+
                   <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
                   <ul className="flex flex-col gap-2 mt-4 md:mt-5">
                     {project.results.map((result) => (
@@ -117,6 +146,15 @@ export const ProjectsSection = () => {
                       >
                         <span className="text-xs">Git Hub</span>
                         <GitIcon className="size-4" />
+                      </button>
+                    </a>
+                    <a href={project.infolink}>
+                      <button
+                        className="bg-white text-gray-950
+              rounded-xl font-semibold inline-flex items-center
+              justify-center gap-2 p-2 md:w-auto"
+                      >
+                        <span className="text-xs">상세내용</span>
                       </button>
                     </a>
                   </div>
