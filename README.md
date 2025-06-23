@@ -1,6 +1,6 @@
 <h1 align="center">포트폴리오 웹사이트 지니지니온라인</h1>
 
-  <img src="./public/images/home_page.gif" width="420"/>
+  <img src="./src/assets/images/home_page.gif" width="420"/>
 
 <p align="center">🚩 배포 URL : https://www.jinijini.online/</p>
 
@@ -8,7 +8,7 @@
 
 ### [AI Chatbot]
 
-  <img src="./public/images/chatbot_page.gif" width="420"/>
+  <img src="./src/assets/images/chatbot_page.gif" width="420"/>
 
 - 하단의 말풍선 클릭시 이용 가능합니다.
 - OpenAI의 GPT-3.5-turbo 모델을 활용한 AI 챗봇입니다.
@@ -17,7 +17,7 @@
 
 ### [Email 보내기 기능]
 
-  <img src="./public/images/email_page.jpg" width="420"/>
+  <img src="./src/assets/images/email_page.jpg" width="420"/>
 
 - Nodemailer를 활용하여 사용자가 입력한 내용을 지정된 이메일로 전송하는 기능을 구현하였습니다.
 
