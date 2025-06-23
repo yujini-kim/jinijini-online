@@ -1,4 +1,4 @@
-# 포트폴리오 웹사이트 지니지니온라인
+<h1 align="center">포트폴리오 웹사이트 지니지니온라인</h1> 
 
 - 배포 URL : https://www.jinijini.online/
 
