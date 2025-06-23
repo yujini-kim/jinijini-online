@@ -1,6 +1,8 @@
 <h1 align="center">포트폴리오 웹사이트 지니지니온라인</h1>
 
-  <img align="center" src="./src/assets/images/home_page.gif" width="420"/>
+ <p align="center">
+  <img src="./src/assets/images/home_page.gif" width="420" />
+</p>
 
 <p align="center">🚩 배포 URL : https://www.jinijini.online/</p>
 
